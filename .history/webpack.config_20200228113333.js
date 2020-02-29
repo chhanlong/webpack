@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');          //解析html�
 const ExtractTextPlugin = require("extract-text-webpack-plugin");  //主要是为了把css从JS抽出
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');        //主要是为了清除相同的js缓存
+const utils = require('./utils')
 
 module.exports = {
   entry:{
@@ -20,15 +21,15 @@ module.exports = {
           fallback: "style-loader",
           use: ["css-loader",'sass-loader']
         })
+      },
+      {
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: utils.assetsPath('media/[name].[ext]')
+        }
       }
-      // {
-      //   test: /\.(audio)$/,
-      //   loader: 'url-loader',
-      //   options: {
-      //     limit: 10000,
-      //     name: 'audio/[hash:8].[name].[ext]'
-      //   }
-      // }
     ]
   },
   //监听
@@ -44,7 +45,7 @@ module.exports = {
   //插件
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'webpack配置',                    //index.html标题 <%= htmlWebpackPlugin.options.title %>
+      title: '标题设置',                       //index.html标题 <%= htmlWebpackPlugin.options.title %>
       template : './src/index.html',           //模板路径
       filename : 'index.html',                 //生成的页面路径
       inject : true,

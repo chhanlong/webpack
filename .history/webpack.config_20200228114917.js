@@ -20,15 +20,15 @@ module.exports = {
           fallback: "style-loader",
           use: ["css-loader",'sass-loader']
         })
+      },
+      {
+        　test: /\.(audio)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: 'audio/[name].[ext]'
+        }
       }
-      // {
-      //   test: /\.(audio)$/,
-      //   loader: 'url-loader',
-      //   options: {
-      //     limit: 10000,
-      //     name: 'audio/[hash:8].[name].[ext]'
-      //   }
-      // }
     ]
   },
   //监听

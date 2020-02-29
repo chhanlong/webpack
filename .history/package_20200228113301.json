@@ -4,7 +4,8 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "dev": "webpack-dev-server --hot --inline --watch",
+    "dev": "webpack-dev-server --hot --inline",
+    "star": "webpack --watch",
     "prod": "webpack -p"
   },
   "author": "",
@@ -22,6 +23,7 @@
     "webpack-dev-server": "^2.9.7"
   },
   "dependencies": {
-    "jquery": "^3.4.1"
+    "jquery": "^3.4.1",
+    "utils": "^0.3.1"
   }
 }

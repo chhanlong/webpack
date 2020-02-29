@@ -21,14 +21,6 @@ module.exports = {
           use: ["css-loader",'sass-loader']
         })
       }
-      // {
-      //   test: /\.(audio)$/,
-      //   loader: 'url-loader',
-      //   options: {
-      //     limit: 10000,
-      //     name: 'audio/[hash:8].[name].[ext]'
-      //   }
-      // }
     ]
   },
   //监听
@@ -44,8 +36,8 @@ module.exports = {
   //插件
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'webpack配置',                    //index.html标题 <%= htmlWebpackPlugin.options.title %>
-      template : './src/index.html',           //模板路径
+      title: '目标2',                       //index.html标题 <%= htmlWebpackPlugin.options.title %>
+      template : './src/index.html',        //模板路径
       filename : 'index.html',                 //生成的页面路径
       inject : true,
       minify:{
